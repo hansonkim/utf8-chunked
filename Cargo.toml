@@ -1,0 +1,26 @@
+[package]
+name = "utf8-chunked"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+description = "Incremental UTF-8 decoder that safely handles multi-byte characters split across chunk boundaries"
+keywords = ["utf8", "streaming", "async", "tokio", "unicode"]
+categories = ["encoding", "asynchronous"]
+repository = "https://github.com/hanson/utf8-chunked"
+readme = "README.md"
+
+[features]
+default = []
+tokio = ["dep:tokio", "dep:tokio-util", "dep:tokio-stream", "dep:futures"]
+
+[dependencies]
+tokio = { version = "1", features = ["io-util", "rt", "sync"], optional = true }
+tokio-util = { version = "0.7", features = ["io", "codec"], optional = true }
+tokio-stream = { version = "0.1", optional = true }
+futures = { version = "0.3", optional = true }
+
+[dev-dependencies]
+tokio = { version = "1", features = ["full"] }
+tokio-util = { version = "0.7", features = ["io", "codec"] }
+tokio-stream = "0.1"
+futures = "0.3"
