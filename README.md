@@ -19,6 +19,22 @@ For example, the Korean character '한' is encoded as 3 bytes (`0xED 0x95 0x9C`)
 - **Optional `tokio` integration**: Stream adapter and codec for async byte streams
 - **Minimal buffering**: At most 3 bytes buffered between chunks
 
+## Installation
+
+Add to your `Cargo.toml`:
+
+```toml
+[dependencies]
+utf8-chunked = "0.1"
+```
+
+With `tokio` async support:
+
+```toml
+[dependencies]
+utf8-chunked = { version = "0.1", features = ["tokio"] }
+```
+
 ## Usage
 
 ### Core API (sync, no dependencies)
